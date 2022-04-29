@@ -1,0 +1,88 @@
+﻿@model IEnumerable<DataLayer.StorageArea>
+
+@{
+    ViewData["Title"] = "Список площадок хранения";
+}
+
+<p>
+    <a asp-action="Create">Добавить площадку хранения</a>
+</p>
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Действия
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Adress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.KPP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Capacity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Area)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a asp-action="Edit" asp-route-id="@item.StorageAreaId">Изменить</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Details" asp-route-id="@item.StorageAreaId">Карточка</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Delete" asp-route-id="@item.StorageAreaId">Удалить</a>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.INN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KPP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Area)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

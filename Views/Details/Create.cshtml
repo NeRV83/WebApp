@@ -1,0 +1,94 @@
+﻿@model DataLayer.Detail
+@{
+    ViewData["Title"] = "Добавление детали";
+}
+
+    <h4>Добавить деталь</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="DetailNumber" class="control-label"></label>
+                    <input asp-for="DetailNumber" class="form-control" />
+                    <span asp-validation-for="DetailNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ManufactYear" class="control-label"></label>
+                    <input asp-for="ManufactYear" class="form-control" />
+                    <span asp-validation-for="ManufactYear" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ManufactCode" class="control-label"></label>
+                    <input asp-for="ManufactCode" class="form-control" />
+                    <span asp-validation-for="ManufactCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="InDate" class="control-label"></label>
+                    <input asp-for="InDate" class="form-control" />
+                    <span asp-validation-for="InDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OutDate" class="control-label"></label>
+                    <input asp-for="OutDate" class="form-control" />
+                    <span asp-validation-for="OutDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RailCar" class="control-label"></label>
+                    <input asp-for="RailCar" class="form-control" />
+                    <span asp-validation-for="RailCar" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StorageSq" class="control-label"></label>
+                    <input asp-for="StorageSq" class="form-control" />
+                    <span asp-validation-for="StorageSq" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Quantity" class="control-label"></label>
+                    <input asp-for="Quantity" class="form-control" />
+                    <span asp-validation-for="Quantity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="WheelSize" class="control-label"></label>
+                    <input asp-for="WheelSize" class="form-control" />
+                    <span asp-validation-for="WheelSize" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DetailCategory" class="control-label"></label>
+                    <input asp-for="DetailCategory" class="form-control" />
+                    <span asp-validation-for="DetailCategory" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DetailType" class="control-label"></label>
+                    <input asp-for="DetailType" class="form-control" />
+                    <span asp-validation-for="DetailType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DetailCondition" class="control-label"></label>
+                    <input asp-for="DetailCondition" class="form-control" />
+                    <span asp-validation-for="DetailCondition" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AttachedFiles" class="control-label"></label>
+                    <input asp-for="AttachedFiles" class="form-control" />
+                    <span asp-validation-for="AttachedFiles" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StorageAreaId" class="control-label"></label>
+                    <select asp-for="StorageAreaId" class="form-control" asp-items="ViewBag.StorageAreaId"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Создать" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Назад к списку</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

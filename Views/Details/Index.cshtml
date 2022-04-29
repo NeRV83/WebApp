@@ -1,0 +1,123 @@
+﻿@model IEnumerable<DataLayer.Detail>
+@{
+    ViewData["Title"] = "Список деталей";
+}
+
+<p>
+    <a asp-action="Create">Добавить деталь</a>
+</p>
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Действия
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DetailNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ManufactYear)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ManufactCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OutDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RailCar)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StorageSq)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WheelSize)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DetailCategory)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DetailType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DetailCondition)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AttachedFiles)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StorageArea)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a asp-action="Edit" asp-route-id="@item.DetailId">Изменить</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-action="Details" asp-route-id="@item.DetailId">Карточка</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-action="Delete" asp-route-id="@item.DetailId">Удалить</a>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DetailNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ManufactYear)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ManufactCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OutDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RailCar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StorageSq)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WheelSize)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DetailCategory)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DetailType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DetailCondition)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AttachedFiles)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StorageArea.Name)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
